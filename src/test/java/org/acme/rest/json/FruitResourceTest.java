@@ -34,8 +34,8 @@ public class FruitResourceTest {
         .then()
             .statusCode(200)
             .body("$.size()", is(3),
-                    "name", containsInAnyOrder("Apple", "Pineapple", "Pear"),
-                    "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Winter fruit"));
+                    "name", containsInAnyOrder("Apple", "Pineapple", "Pear", "Mango"),
+                    "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Winter fruit", "Alphonso is the best"));
 
         given()
             .body("{\"name\": \"Pear\", \"description\": \"Winter fruit\"}")
@@ -45,7 +45,7 @@ public class FruitResourceTest {
         .then()
             .statusCode(200)
             .body("$.size()", is(2),
-                    "name", containsInAnyOrder("Apple", "Pineapple"),
-                    "description", containsInAnyOrder("Winter fruit", "Tropical fruit"));
+                    "name", containsInAnyOrder("Apple", "Pineapple", "Mango"),
+                    "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Alphonso is the best"));
     }
 }
