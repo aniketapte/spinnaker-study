@@ -21,7 +21,7 @@ public class FruitResourceTest {
              .statusCode(200)
              .body("$.size()", is(2),
                      "name", containsInAnyOrder("Apple", "Pineapple", "Mango"),
-                     "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Alphonso is king"));
+                     "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Alphonso is the best"));
     }
 
     @Test
