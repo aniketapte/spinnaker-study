@@ -19,7 +19,7 @@ public class FruitResourceTest {
           .when().get("/fruits")
           .then()
              .statusCode(200)
-             .body("$.size()", is(2),
+             .body("$.size()", is(3),
                      "name", containsInAnyOrder("Apple", "Pineapple", "Mango"),
                      "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Alphonso is the best"));
     }
@@ -33,7 +33,7 @@ public class FruitResourceTest {
             .post("/fruits")
         .then()
             .statusCode(200)
-            .body("$.size()", is(3),
+            .body("$.size()", is(4),
                     "name", containsInAnyOrder("Apple", "Pineapple", "Pear", "Mango"),
                     "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Winter fruit", "Alphonso is the best"));
 
@@ -44,7 +44,7 @@ public class FruitResourceTest {
             .delete("/fruits")
         .then()
             .statusCode(200)
-            .body("$.size()", is(2),
+            .body("$.size()", is(3),
                     "name", containsInAnyOrder("Apple", "Pineapple", "Mango"),
                     "description", containsInAnyOrder("Winter fruit", "Tropical fruit", "Alphonso is the best"));
     }
